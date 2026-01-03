@@ -6,7 +6,7 @@ app.use(express.json());
 
 let browser;
 
-// Launch browser ONCE
+// Launch browser once at startup
 (async () => {
   browser = await chromium.launch({
     headless: true,
