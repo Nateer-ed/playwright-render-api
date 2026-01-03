@@ -1,0 +1,12 @@
+{
+  "name": "playwright-render-api",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "postinstall": "npx playwright install chromium"
+  },
+  "dependencies": {
+    "express": "^4.22.1",
+    "playwright": "^1.57.0"
+  }
+}
