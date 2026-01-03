@@ -11,19 +11,16 @@ async function initBrowser() {
   try {
     browser = await chromium.launch({
       headless: true,
-      executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH,
       args: [
         "--no-sandbox",
         "--disable-setuid-sandbox",
         "--disable-dev-shm-usage",
         "--disable-gpu",
-        "--disable-software-rasterizer",
       ],
     });
     console.log("Browser launched successfully");
   } catch (error) {
     console.error("Failed to launch browser:", error);
-    // Retry after delay
     setTimeout(initBrowser, 5000);
   }
 }
